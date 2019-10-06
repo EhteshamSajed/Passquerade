@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Passquerade</string>
+    <string name="password_placeholder">Password</string>
+    <string name="result_heading_text">Result</string>
+    <string name="dummy_number_of_trials_text">Number of trials: 11</string>
+    <string name="number_of_correct_matches_text">Number of correct matches: 8</string>
+    <string name="number_of_incorrect_matches_text">Number of incorrect matches: 3</string>
+    <string name="show_result_button_text">Show Result</string>
+
+
+    <string-array name="fonts_array">
+        <item>Blur</item>
+        <item>Crystal</item>
+        <item>Blur</item>
+        <item>Blur</item>
+    </string-array>
+</resources>
