@@ -69,10 +69,21 @@ public class TestPassquerade extends AppCompatActivity {
 
         Bitmap[] bitmaps = getResizedBitmaps(text);
 
+        int sizeOfImageView = 0;
         for(int i = 0; i < bitmaps.length; i++){
             ImageView imageView = createDynamicImageView();
             imageView.setImageBitmap(bitmaps[i]);
+            /*
+            imageView.setScaleX(0.5f);
+            imageView.setScaleY(0.5f);
+            */
+
+            imageView.getLayoutParams().width = bitmaps[i].getWidth();
+            imageView.getLayoutParams().height = bitmaps[i].getHeight();
+
+            //sizeOfImageView += imageView.getMaxWidth();
         }
+        Log.d(TAG, "renderFont: sizeOfImageView " + sizeOfImageView);
     }
 
     Bitmap[] getResizedBitmaps(String text){
@@ -88,11 +99,21 @@ public class TestPassquerade extends AppCompatActivity {
             sizeY += currentFont.getLetter(text.charAt(i) + "").getFontRect().bottom;
         }
 
+        /*
+        for(int i = 0; i < text.length(); i++){
+            Bitmap fontBitmap = currentFont.getLetterBitmap(this, text.charAt(i) + "");
+            sizeX += fontBitmap.getWidth();
+        }*/
+
+        Log.d(TAG, "getResizedBitmaps: sizeX " + sizeX);
+        //Log.d(TAG, "getResizedBitmaps: sizeY " + sizeY);
+
         if(sizeX > displayWidth){
             factor = (float) displayWidth/sizeX;
         }
 
         Log.d(TAG, "getResizedBitmaps: factor = " + factor);
+        Log.d(TAG, "getResizedBitmaps: text.length() = " + text.length());
 
         for(int i = 0; i < text.length(); i++){
             Bitmap fontBitmap = currentFont.getLetterBitmap(this, text.charAt(i) + "");
@@ -104,6 +125,7 @@ public class TestPassquerade extends AppCompatActivity {
 
     public ImageView createDynamicImageView(){
         ImageView imageView = new ImageView(this);
+
 
         lineaLayout.addView(imageView);
 
@@ -230,6 +252,9 @@ public class TestPassquerade extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         displayHeight = displayMetrics.heightPixels;
         displayWidth = displayMetrics.widthPixels;
+
+        Log.d(TAG, "configureUI: displayHeight " + displayHeight);
+        Log.d(TAG, "configureUI: displayWidth " + displayWidth);
 
         lineaLayout = (LinearLayout) findViewById(R.id.linearLayout);
         passwordText = (EditText) findViewById(R.id.passwordText);

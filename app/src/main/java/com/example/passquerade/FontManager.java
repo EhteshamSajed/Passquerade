@@ -30,17 +30,17 @@ public class FontManager {
         //opt.inJustDecodeBounds = true;
         opt.inScaled = false;
 
-        fontName.add("Blur");
-        fontSprites.add(BitmapFactory.decodeResource( context.getResources(), R.drawable.original_v2_blur_22, opt));
+        /*fontName.add("Blur");
+        fontSprites.add(BitmapFactory.decodeResource( context.getResources(), R.drawable.original_v2_blur_22, opt));*/
 
         fontName.add("Colour Halftone");
         fontSprites.add(BitmapFactory.decodeResource( context.getResources(), R.drawable.font_color_halftone_20, opt));
 
-        fontName.add("Mosaic");
-        fontSprites.add(BitmapFactory.decodeResource( context.getResources(), R.drawable.font_mossaic_40, opt));
+        /*fontName.add("Mosaic");
+        fontSprites.add(BitmapFactory.decodeResource( context.getResources(), R.drawable.font_mossaic_27, opt));
 
         fontName.add("Crystallize");
-        fontSprites.add(BitmapFactory.decodeResource( context.getResources(), R.drawable.font_crystallize_20, opt));
+        fontSprites.add(BitmapFactory.decodeResource( context.getResources(), R.drawable.font_crystallize_20, opt));*/
 
     }
 
